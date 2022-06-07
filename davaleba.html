@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davaleba</title>
+</head>
+<body>
+
+    <input type="text" id="name"> 
+    <button id="send">send</button>  
+</body>
+
+<script>
+    var btn = document.getElementById('send'); 
+
+    function sendMessage(){ 
+        alert('გთხოვთ შეავსოთ სავალდებულო ველები')
+    }
+    function mouseOver(){
+        btn.style.background = rgb(220,220,220);
+    } 
+    function mouseOut(){
+        btn.style.background = "grey";
+    }
+
+    
+    btn.addEventListener('click',sendMessage); 
+    btn.addEventListener('mouseover',mouseOver);
+    btn.addEventListener('mouseout',mouseOut);
+
+    
+    var inputElement = document.getElementById('name'); 
+
+
+    inputElement.addEventListener('keydown',function(event){
+            event.preventDefault(); 
+            if(event.which === 13){
+                console.log('enter')
+            }else {
+                console.log('another key')
+            } 
+            console.log(event.target.value); 
+            event.target.value = event.target.value + event.key.toUpperCase(); 
+        })
+
+        btn.style.padding = "15px"
+
+    </script>
+</html>
